@@ -1,12 +1,5 @@
 ##
-# Default project editor config. Any changes to this in a given project should be offered as a pull request back into
-# this project.
 # See http://editorconfig.org
-##
-
-##
-# Special property that should be specified at the top of the file outside of any sections. Set to true to stop
-# .editorconfig files search on current file.
 ##
 root = true
 
