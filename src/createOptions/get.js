@@ -13,9 +13,9 @@ module.exports = (config, path, params) => {
     },
     json: true,
     method: "GET",
-    qs: defaults({}, {
+    qs: defaults({}, params || {}, {
       limit: config.limit || defaultLimit
-    }, params || {}),
+    }),
     url: config.url + path
   });
 };
