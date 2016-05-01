@@ -59,7 +59,9 @@
     "checkReturnTypes": true,
     "checkTypes": "capitalizedNativeCase",
     "disallowNewlineAfterDescription": true,
-    "enforceExistence": "exceptExports",
+    "enforceExistence": {
+      "allExcept": ["arrow", "exports", "expressions"]
+    },
     "leadingUnderscoreAccess": true,
     "requireHyphenBeforeDescription": true,
     "requireParamDescription": true,
