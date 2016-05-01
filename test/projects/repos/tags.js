@@ -12,8 +12,9 @@ const stashConfig = include("test/config");
 const config = defaults({}, stashConfig);
 const projectKey = "TEST";
 const repositorySlug = "test-repo";
+const params = {};
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).tags(repositorySlug)
+stash(config).api().projects().repos(projectKey).tags(repositorySlug, params)
   .then(response => console.log(response.body))
   .catch(console.error);

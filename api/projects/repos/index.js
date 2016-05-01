@@ -79,8 +79,8 @@ module.exports = (config, projectKey) => Object.freeze({
   settings(repositorySlug) {
     return include("api/projects/repos/settings")(config, projectKey, repositorySlug);
   },
-  tags(repositorySlug) {
-    return include("api/projects/repos/tags")(config, projectKey, repositorySlug);
+  tags(repositorySlug, params) {
+    return include("api/projects/repos/tags")(config, projectKey, repositorySlug, params);
   },
   update(repositorySlug, values) {
     return request(createOptions.forPut(config, reposPath(projectKey, repositorySlug), toRepositoryUpdate(values)));
