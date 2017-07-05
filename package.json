@@ -10,6 +10,12 @@
     "stash"
   ],
   "license": "MIT",
+  "homepage" : "https://github.com/jlmorgan/node-stash-client",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/jlmorgan/node-stash-client.git"
+  },
+  "url" : "https://github.com/jlmorgan/node-stash-client/issues",
   "main": "index.js",
   "scripts": {},
   "dependencies": {
