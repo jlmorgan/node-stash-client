@@ -19,10 +19,10 @@
   "main": "index.js",
   "scripts": {},
   "dependencies": {
-    "bluebird": "^3.3.5",
+    "bluebird": "^3.5.0",
     "include": "^1.1.0",
-    "lodash": "^4.11.1",
-    "request": "^2.72.0"
+    "lodash": "^4.17.4",
+    "request": "^2.81.0"
   },
   "engines": {
     "node": ">=4.0.0"
