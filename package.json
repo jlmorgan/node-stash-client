@@ -1,6 +1,6 @@
 {
   "name": "stash-client",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "Justin Morgan <justin.l.morgan@gmail.com>",
   "description": "A Node.js client for Atlassian's Bitbucket Server (formerly Stash).",
   "keywords": [
@@ -10,13 +10,19 @@
     "stash"
   ],
   "license": "MIT",
+  "homepage" : "https://github.com/jlmorgan/node-stash-client",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/jlmorgan/node-stash-client.git"
+  },
+  "url" : "https://github.com/jlmorgan/node-stash-client/issues",
   "main": "index.js",
   "scripts": {},
   "dependencies": {
-    "bluebird": "^3.3.5",
+    "bluebird": "^3.5.0",
     "include": "^1.1.0",
-    "lodash": "^4.11.1",
-    "request": "^2.72.0"
+    "lodash": "^4.17.4",
+    "request": "^2.81.0"
   },
   "engines": {
     "node": ">=4.0.0"
