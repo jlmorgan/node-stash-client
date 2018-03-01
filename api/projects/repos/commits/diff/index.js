@@ -19,5 +19,5 @@ module.exports = curryN(6, (config, projectKey, repositorySlug, commitId, filePa
     config,
     diffPath(projectKey, repositorySlug, commitId, filePath),
     filterListParams(params)
-  )
-));
+  ))
+);
