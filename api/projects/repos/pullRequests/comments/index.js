@@ -17,7 +17,6 @@ const filterGetParams = filterProperties(["path"]);
 const toCommentUpdate = filterProperties(["text", "version"]);
 
 module.exports = curryN(4, (config, projectKey, repositorySlug, pullRequestId) => Object.freeze({
-  // NOTE(jlmorgan): Not sure why, but I get 404 for create requests.
   create(values) {
     return request(createOptions.forPost(
       config,
