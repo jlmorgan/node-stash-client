@@ -17,14 +17,8 @@ const repositorySlug = "test-repo";
 const commitId = "200528952f87fd1e96cdbe98e83432bde857daf1";
 const params = {};
 const values = {
-  anchor: {
-    path: "README.md",
-    srcPath: "README.md"
-  },
   text: "Test comment"
 };
-
-// 24857 24858 24859 24860 24861
 
 // jscs:disable jsDoc
 stash(config).api().projects().repos(projectKey).commits(repositorySlug).comments(commitId).create(params, values)
