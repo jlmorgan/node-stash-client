@@ -29,6 +29,7 @@
     "url": "https://github.com/jlmorgan/node-stash-client.git"
   },
   "scripts": {
+    "build": "npm run lint",
     "lint": "eslint api lib src test"
   },
   "url": "https://github.com/jlmorgan/node-stash-client/issues",
