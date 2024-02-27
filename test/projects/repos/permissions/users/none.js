@@ -18,6 +18,11 @@ const params = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).permissions(repositorySlug).users().none(params)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .permissions(repositorySlug)
+  .users()
+  .none(params)
   .then(response => console.log(response.body))
   .catch(console.error);

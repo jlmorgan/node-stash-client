@@ -19,6 +19,9 @@ const values = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().admin().users().credentials(values)
+stash(config).api()
+  .admin()
+  .users()
+  .credentials(values)
   .then(response => console.log(response.body))
   .catch(console.error);

@@ -28,10 +28,10 @@ module.exports = config => Object.freeze({
   repos(params) {
     return include("api/repos")(config, params);
   },
-  users() {
-    return include("api/users")(config);
-  },
   tasks() {
     return include("api/tasks")(config);
+  },
+  users() {
+    return include("api/users")(config);
   }
 });

@@ -21,6 +21,9 @@ const params = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().admin().users().create(params)
+stash(config).api()
+  .admin()
+  .users()
+  .create(params)
   .then(response => console.log(response.body))
   .catch(console.error);

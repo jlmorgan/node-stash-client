@@ -3,13 +3,15 @@
 // Third Party
 const defaults = require("lodash/defaults");
 
+// Project
+const toAuthorization = require("./toAuthorization");
+
 module.exports = (config, path, params) => {
   const defaultLimit = 100;
 
   return Object.freeze({
-    auth: {
-      pass: config.password,
-      user: config.username
+    headers: {
+      "Authorization": toAuthorization(config)
     },
     json: true,
     method: "GET",

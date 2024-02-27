@@ -21,6 +21,9 @@ const values = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).fork(repositorySlug, values)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .fork(repositorySlug, values)
   .then(response => console.log(response.body))
   .catch(console.error);

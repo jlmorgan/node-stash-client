@@ -18,6 +18,9 @@ const values = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().admin().users().addGroups(values)
+stash(config).api()
+  .admin()
+  .users()
+  .addGroups(values)
   .then(response => console.log(response.body))
   .catch(console.error);

@@ -13,6 +13,8 @@ const config = defaults({}, stashConfig);
 const userSlug = "test.user";
 
 // jscs:disable jsDoc
-stash(config).api().users().get(userSlug)
+stash(config).api()
+  .users()
+  .get(userSlug)
   .then(response => console.log(response.body))
   .catch(console.error);

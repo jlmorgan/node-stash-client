@@ -17,6 +17,10 @@ const params = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().admin().permissions().groups().list(params)
+stash(config).api()
+  .admin()
+  .permissions()
+  .groups()
+  .list(params)
   .then(response => console.log(response.body))
   .catch(console.error);

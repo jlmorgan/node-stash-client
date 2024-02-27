@@ -10,6 +10,7 @@ const filterParams = include("src/filterProperties")(["version"]);
 const mergePath = include("api/projects/repos/pullRequests/merge/path");
 const request = include("lib/request");
 
+// eslint-disable-next-line max-params
 module.exports = curryN(5, (config, projectKey, repositorySlug, pullRequestId, params) => request(createOptions.forPost(
   config,
   mergePath(projectKey, repositorySlug, pullRequestId),

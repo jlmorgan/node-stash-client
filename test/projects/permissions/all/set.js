@@ -17,6 +17,10 @@ const permission = "PROJECT_READ";
 const params = { allow: false };
 
 // jscs:disable jsDoc
-stash(config).api().projects().permissions(projectKey).all(permission).set(params)
+stash(config).api()
+  .projects()
+  .permissions(projectKey)
+  .all(permission)
+  .set(params)
   .then(response => console.log(response.statusCode === 204))
   .catch(console.error);

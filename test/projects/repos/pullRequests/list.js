@@ -17,6 +17,10 @@ const repositorySlug = "test-repo";
 const params = {};
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).pullRequests(repositorySlug).list(params)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .pullRequests(repositorySlug)
+  .list(params)
   .then(response => console.log(response.body))
   .catch(console.error);

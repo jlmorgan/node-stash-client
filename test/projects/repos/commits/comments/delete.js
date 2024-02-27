@@ -23,6 +23,11 @@ const params = {
 // 24857 24858 24859 24860 24861
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).commits(repositorySlug).comments(commitId).delete(commentId, params)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .commits(repositorySlug)
+  .comments(commitId)
+  .delete(commentId, params)
   .then(response => console.log(response.statusCode === 204))
   .catch(console.error);

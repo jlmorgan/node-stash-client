@@ -15,6 +15,9 @@ const config = defaults({
 const projectKey = "TEST";
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).list()
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .list()
   .then(response => console.log(response.body))
   .catch(console.error);

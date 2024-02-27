@@ -17,6 +17,8 @@ const values = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().users().update(values)
+stash(config).api()
+  .users()
+  .update(values)
   .then(response => console.log(response.body))
   .catch(console.error);

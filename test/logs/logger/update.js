@@ -16,6 +16,9 @@ const loggerName = "rootLogger";
 const levelName = "WARN";
 
 // jscs:disable jsDoc
-stash(config).api().logs().logger(loggerName).update(levelName)
+stash(config).api()
+  .logs()
+  .logger(loggerName)
+  .update(levelName)
   .then(response => console.log(response.statusCode === 204))
   .catch(console.error);

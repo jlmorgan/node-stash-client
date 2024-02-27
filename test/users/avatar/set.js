@@ -17,6 +17,9 @@ const userSlug = "test.user";
 const filePath = path.join(__dirname, "test.png");
 
 // jscs:disable jsDoc
-stash(config).api().users().avatar(userSlug).set(filePath)
+stash(config).api()
+  .users()
+  .avatar(userSlug)
+  .set(filePath)
   .then(response => console.log(response.body))
   .catch(console.error);

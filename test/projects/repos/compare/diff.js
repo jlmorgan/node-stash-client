@@ -22,6 +22,10 @@ const params = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).compare(repositorySlug).diff(filePath, params)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .compare(repositorySlug)
+  .diff(filePath, params)
   .then(response => console.log(response.body))
   .catch(console.error);

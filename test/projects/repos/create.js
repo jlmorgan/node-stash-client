@@ -16,6 +16,9 @@ const values = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).create(values)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .create(values)
   .then(response => console.log(response.body))
   .catch(console.error);

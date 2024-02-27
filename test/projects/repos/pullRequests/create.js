@@ -15,30 +15,30 @@ const config = defaults({
 const projectKey = "TEST";
 const repositorySlug = "test-repo";
 const values = {
-  "title": "Test PR via REST API",
-  "description": "Keen!",
-  "state": "OPEN",
-  "open": true,
   "closed": false,
+  "description": "Keen!",
   "fromRef": {
     "id": "refs/heads/dev",
     "repository": {
-      "slug": repositorySlug,
       "project": {
         "key": projectKey
-      }
+      },
+      "slug": repositorySlug
     }
   },
+  "locked": false,
+  "open": true,
+  "state": "OPEN",
+  "title": "Test PR via REST API",
   "toRef": {
     "id": "refs/heads/master",
     "repository": {
-      "slug": repositorySlug,
       "project": {
         "key": projectKey
-      }
+      },
+      "slug": repositorySlug
     }
-  },
-  "locked": false
+  }
   // "reviewers": [
   //   {
   //     "user": {
@@ -48,7 +48,10 @@ const values = {
   // ]
 };
 
-// jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).pullRequests(repositorySlug).create(values)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .pullRequests(repositorySlug)
+  .create(values)
   .then(response => console.log(response.body))
   .catch(console.error);

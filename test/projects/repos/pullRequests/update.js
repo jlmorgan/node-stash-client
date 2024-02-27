@@ -16,20 +16,24 @@ const projectKey = "TEST";
 const repositorySlug = "test-repo";
 const pullRequestId = "3";
 const values = {
-  "id": pullRequestId,
-  "version": 0,
-  "title": "Test PR via REST API",
   "description": "Keen!",
+  "id": pullRequestId,
   "reviewers": [
     {
       "user": {
         "name": "username"
       }
     }
-  ]
+  ],
+  "title": "Test PR via REST API",
+  "version": 0
 };
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).pullRequests(repositorySlug).update(pullRequestId, values)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .pullRequests(repositorySlug)
+  .update(pullRequestId, values)
   .then(response => console.log(response.body))
   .catch(console.error);

@@ -15,6 +15,9 @@ const config = defaults({
 const levelName = "WARN";
 
 // jscs:disable jsDoc
-stash(config).api().logs().rootLogger().update(levelName)
+stash(config).api()
+  .logs()
+  .rootLogger()
+  .update(levelName)
   .then(response => console.log(response.statusCode === 204))
   .catch(console.error);

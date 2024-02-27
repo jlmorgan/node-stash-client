@@ -14,10 +14,16 @@ const toPullRequest = include("api/projects/repos/pullRequests/toPullRequest");
 const toPullRequestUpdate = include("api/projects/repos/pullRequests/toPullRequestUpdate");
 
 // Setup
-const filterListParams = filterProperties(asPaged(
-  ["at", "direction", "order", "state", "withAttributes", "withProperties"]
-));
+const filterListParams = filterProperties(asPaged([
+  "at",
+  "direction",
+  "order",
+  "state",
+  "withAttributes",
+  "withProperties"
+]));
 
+// eslint-disable-next-line max-lines-per-function
 module.exports = curryN(3, (config, projectKey, repositorySlug) => Object.freeze({
   activities(pullRequestId, params) {
     return include("api/projects/repos/pullRequests/activities")(

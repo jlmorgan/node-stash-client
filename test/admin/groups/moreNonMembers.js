@@ -17,6 +17,9 @@ const params = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().admin().groups().moreNonMembers(params)
+stash(config).api()
+  .admin()
+  .groups()
+  .moreNonMembers(params)
   .then(response => console.log(response.body))
   .catch(console.error);

@@ -13,6 +13,8 @@ const config = defaults({}, stashConfig);
 const taskId = "1";
 
 // jscs:disable jsDoc
-stash(config).api().tasks().delete(taskId)
+stash(config).api()
+  .tasks()
+  .delete(taskId)
   .then(response => console.log(response.body))
   .catch(console.error);
