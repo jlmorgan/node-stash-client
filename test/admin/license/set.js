@@ -17,6 +17,9 @@ const values = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().admin().license().set(values)
+stash(config).api()
+  .admin()
+  .license()
+  .set(values)
   .then(response => console.log(response.body))
   .catch(console.error);

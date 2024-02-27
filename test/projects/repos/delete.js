@@ -14,6 +14,9 @@ const projectKey = "TEST";
 const repositorySlug = "test-repo-updated";
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).delete(repositorySlug)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .delete(repositorySlug)
   .then(response => console.log([202, 204].indexof(response.statusCode) > -1))
   .catch(console.error);

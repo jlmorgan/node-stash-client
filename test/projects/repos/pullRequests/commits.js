@@ -20,6 +20,10 @@ const params = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).pullRequests(repositorySlug).commits(pullRequestId, params)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .pullRequests(repositorySlug)
+  .commits(pullRequestId, params)
   .then(response => console.log(response.body))
   .catch(console.error);

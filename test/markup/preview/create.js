@@ -19,6 +19,9 @@ const body = `# Test Project
 `;
 
 // jscs:disable jsDoc
-stash(config).api().markup().preview().create(body, params)
+stash(config).api()
+  .markup()
+  .preview()
+  .create(body, params)
   .then(response => console.log(response.body))
   .catch(console.error);

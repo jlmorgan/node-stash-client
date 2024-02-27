@@ -10,9 +10,7 @@ const set = require("lodash/fp/set");
 // Project
 const filterProperties = include("src/filterProperties");
 
-module.exports = values => {
-  values = values || {};
-
+module.exports = (values = {}) => {
   const anchorProperties = [
     "fileType",
     "line",
@@ -23,12 +21,14 @@ module.exports = values => {
   const parentProperties = ["id"];
 
   return pipe(
-    result => isPlainObject(get("anchor", values)) ?
+    result => (isPlainObject(get("anchor", values)) ?
       set("anchor", filterProperties(anchorProperties, get("anchor", values)), result) :
-      result,
-    result => isPlainObject(get("parent", values)) ?
+      result
+    ),
+    result => (isPlainObject(get("parent", values)) ?
       set("parent", filterProperties(parentProperties, get("parent", values)), result) :
-      result,
+      result
+    ),
     set("text", get("text", values)),
     Object.seal
   )({});

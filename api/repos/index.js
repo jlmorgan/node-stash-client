@@ -12,7 +12,12 @@ const request = include("lib/request");
 const reposPath = include("api/repos/path");
 
 // Setup
-const filterListParams = filterProperties(asPaged(["name", "projectname", "permission", "visibility"]));
+const filterListParams = filterProperties(asPaged([
+  "name",
+  "projectname",
+  "permission",
+  "visibility"
+]));
 
 module.exports = curry((config, params) => request(createOptions.forGet(
   config,

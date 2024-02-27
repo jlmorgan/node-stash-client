@@ -19,6 +19,10 @@ const params = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).commits(repositorySlug).list(params)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .commits(repositorySlug)
+  .list(params)
   .then(response => console.log(response.body))
   .catch(console.error);

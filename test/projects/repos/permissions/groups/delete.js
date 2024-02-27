@@ -19,6 +19,11 @@ const params = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).permissions(repositorySlug).groups().delete(params)
-  .then(response => response.statusCode === 204 ? console.log(true) : Promise.reject(response.body))
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .permissions(repositorySlug)
+  .groups()
+  .delete(params)
+  .then(response => (response.statusCode === 204 ? console.log(true) : Promise.reject(response.body)))
   .catch(console.error);

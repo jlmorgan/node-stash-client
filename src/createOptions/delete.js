@@ -1,9 +1,11 @@
 "use strict";
 
+// Project
+const toAuthorization = require("./toAuthorization");
+
 module.exports = (config, path, params) => Object.freeze({
-  auth: {
-    pass: config.password,
-    user: config.username
+  headers: {
+    "Authorization": toAuthorization(config)
   },
   json: true,
   method: "DELETE",

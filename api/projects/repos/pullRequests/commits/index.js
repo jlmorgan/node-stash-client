@@ -14,6 +14,7 @@ const request = include("lib/request");
 // Setup
 const filterListParams = filterProperties(asPaged(["withCounts"]));
 
+// eslint-disable-next-line max-params
 module.exports = curryN(5, (config, projectKey, repositorySlug, pullRequestId, params) => request(createOptions.forGet(
   config,
   commitsPath(projectKey, repositorySlug, pullRequestId),

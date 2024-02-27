@@ -11,13 +11,19 @@ const usersPath = include("api/admin/users/path");
 const request = include("lib/request");
 
 // Setup
-const filterCreateParams = filterProperties(
-  ["addToDefaultGroup", "displayName", "emailAddress", "name", "notify", "password"]
-);
+const filterCreateParams = filterProperties([
+  "addToDefaultGroup",
+  "displayName",
+  "emailAddress",
+  "name",
+  "notify",
+  "password"
+]);
 const filterDeleteParams = filterProperties(["name"]);
 const filterListParams = filterProperties(asPaged(["filter"]));
 const toUserUpdate = filterProperties(["displayName", "email", "name"]);
 
+// eslint-disable-next-line max-lines-per-function
 module.exports = config => Object.freeze({
   addGroups(values) {
     return include("api/admin/users/addGroups")(config, values);

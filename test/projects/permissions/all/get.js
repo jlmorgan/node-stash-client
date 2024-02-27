@@ -16,6 +16,10 @@ const projectKey = "TEST";
 const permission = "PROJECT_READ";
 
 // jscs:disable jsDoc
-stash(config).api().projects().permissions(projectKey).all(permission).get()
+stash(config).api()
+  .projects()
+  .permissions(projectKey)
+  .all(permission)
+  .get()
   .then(response => console.log(response.body))
   .catch(console.error);

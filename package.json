@@ -1,8 +1,20 @@
 {
-  "name": "stash-client",
-  "version": "0.2.1",
   "author": "Justin Morgan <justin.l.morgan@gmail.com>",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "include": "^1.1.0",
+    "lodash": "^4.17.21",
+    "node-fetch": "^2.7.0"
+  },
   "description": "A Node.js client for Atlassian's Bitbucket Server (formerly Stash).",
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "engine-strict": true,
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "homepage": "https://github.com/jlmorgan/node-stash-client",
   "keywords": [
     "atlassian",
     "bitbucket",
@@ -10,22 +22,15 @@
     "stash"
   ],
   "license": "MIT",
-  "homepage" : "https://github.com/jlmorgan/node-stash-client",
-  "repository": {
-    "type" : "git",
-    "url" : "https://github.com/jlmorgan/node-stash-client.git"
-  },
-  "url" : "https://github.com/jlmorgan/node-stash-client/issues",
   "main": "index.js",
-  "scripts": {},
-  "dependencies": {
-    "bluebird": "^3.5.1",
-    "include": "^1.1.0",
-    "lodash": "^4.17.5",
-    "request": "^2.83.0"
+  "name": "stash-client",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jlmorgan/node-stash-client.git"
   },
-  "engines": {
-    "node": ">=4.0.0"
+  "scripts": {
+    "lint": "eslint api lib src test"
   },
-  "engine-strict": true
+  "url": "https://github.com/jlmorgan/node-stash-client/issues",
+  "version": "0.2.1"
 }

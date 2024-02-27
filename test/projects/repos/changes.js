@@ -19,6 +19,9 @@ const params = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).changes(repositorySlug, params)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .changes(repositorySlug, params)
   .then(response => console.log(response.body))
   .catch(console.error);

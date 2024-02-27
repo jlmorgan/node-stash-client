@@ -19,6 +19,8 @@ const values = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().tasks().create(values)
+stash(config).api()
+  .tasks()
+  .create(values)
   .then(response => console.log(response.body))
   .catch(console.error);

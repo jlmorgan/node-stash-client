@@ -15,6 +15,9 @@ const config = defaults({
 const loggerName = "rootLogger";
 
 // jscs:disable jsDoc
-stash(config).api().logs().logger(loggerName).get()
+stash(config).api()
+  .logs()
+  .logger(loggerName)
+  .get()
   .then(response => console.log(response.body))
   .catch(console.error);
