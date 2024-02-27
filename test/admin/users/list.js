@@ -17,6 +17,9 @@ const params = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().admin().users().list(params)
+stash(config).api()
+  .admin()
+  .users()
+  .list(params)
   .then(response => console.log(response.body))
   .catch(console.error);

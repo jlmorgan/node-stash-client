@@ -15,6 +15,10 @@ const config = defaults({
 const projectKey = "TEST";
 
 // jscs:disable jsDoc
-stash(config).api().projects().permissions(projectKey).groups().list()
+stash(config).api()
+  .projects()
+  .permissions(projectKey)
+  .groups()
+  .list()
   .then(response => console.log(response.body))
   .catch(console.error);

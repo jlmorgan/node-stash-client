@@ -17,6 +17,11 @@ const values = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).branches(repositorySlug).default().set(values)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .branches(repositorySlug)
+  .default()
+  .set(values)
   .then(response => console.log(response.statusCode === 204))
   .catch(console.error);

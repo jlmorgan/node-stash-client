@@ -5,7 +5,7 @@ const defaults = require("lodash/defaults");
 const include = require("include")(__dirname);
 
 // Project
-const stash = include("index"); // require("stash-client");
+const stash = include("index"); // Require("stash-client");
 
 // Test
 const stashConfig = include("test/config");
@@ -20,7 +20,11 @@ const params = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).pullRequests(repositorySlug).participants(pullRequestId)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .pullRequests(repositorySlug)
+  .participants(pullRequestId)
   .delete(params)
   .then(response => console.log(response.statusCode === 204))
   .catch(console.error);

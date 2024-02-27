@@ -13,7 +13,12 @@ const request = include("lib/request");
 
 // Setup
 const filterGetParams = filterProperties(["path"]);
-const filterListParams = filterProperties(asPaged(["path", "since", "until", "withCounts"]));
+const filterListParams = filterProperties(asPaged([
+  "path",
+  "since",
+  "until",
+  "withCounts"
+]));
 
 module.exports = curryN(3, (config, projectKey, repositorySlug) => Object.freeze({
   changes(commitId) {

@@ -16,6 +16,10 @@ const projectKey = "TEST";
 const repositorySlug = "test-repo";
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).branches(repositorySlug).list()
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .branches(repositorySlug)
+  .list()
   .then(response => console.log(response.body))
   .catch(console.error);

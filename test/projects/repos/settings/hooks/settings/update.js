@@ -5,7 +5,7 @@ const defaults = require("lodash/defaults");
 const include = require("include")(__dirname);
 
 // Project
-const stash = include("index"); // require("stash-client");
+const stash = include("index"); // Require("stash-client");
 
 // Test
 const stashConfig = include("test/config");
@@ -18,7 +18,12 @@ const hookKey = "com.atlassian.stash.plugin.stash-unapprove-reviewers-hook:unapp
 const values = {};
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).settings(repositorySlug).hooks().settings(hookKey)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .settings(repositorySlug)
+  .hooks()
+  .settings(hookKey)
   .update(values)
   .then(response => console.log(response.body))
   .catch(console.error);

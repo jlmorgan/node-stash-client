@@ -15,6 +15,9 @@ const config = defaults({
 const values = {};
 
 // jscs:disable jsDoc
-stash(config).api().admin().mailServer().update(values)
+stash(config).api()
+  .admin()
+  .mailServer()
+  .update(values)
   .then(response => console.log(response.body))
   .catch(console.error);

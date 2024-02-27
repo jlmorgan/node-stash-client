@@ -12,6 +12,8 @@ const stashConfig = include("test/config");
 const config = defaults({}, stashConfig);
 
 // jscs:disable jsDoc
-stash(config).api().users().list()
+stash(config).api()
+  .users()
+  .list()
   .then(response => console.log(response.body))
   .catch(console.error);

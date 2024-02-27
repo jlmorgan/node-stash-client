@@ -12,10 +12,18 @@ const filterProperties = include("src/filterProperties");
 const request = include("lib/request");
 
 // Setup
-const filterListParams = filterProperties(asPaged(["contextLines", "since", "srcPath", "whitespace", "withComments"]));
+const filterListParams = filterProperties(asPaged([
+  "contextLines",
+  "since",
+  "srcPath",
+  "whitespace",
+  "withComments"
+]));
 
-module.exports = curryN(6, (config, projectKey, repositorySlug, commitId, filePath, params) =>
-  request(createOptions.forGet(
+module.exports = curryN(
+  6,
+  // eslint-disable-next-line max-params
+  (config, projectKey, repositorySlug, commitId, filePath, params) => request(createOptions.forGet(
     config,
     diffPath(projectKey, repositorySlug, commitId, filePath),
     filterListParams(params)

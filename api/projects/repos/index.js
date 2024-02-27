@@ -16,6 +16,7 @@ const toRepositoryUpdate = include("api/projects/repos/toRepositoryUpdate");
 // Setup
 const filterListParams = filterProperties(asPaged());
 
+// eslint-disable-next-line max-lines-per-function
 module.exports = (config, projectKey) => Object.freeze({
   branches(repositorySlug) {
     return include("api/projects/repos/branches")(config, projectKey, repositorySlug);
@@ -26,14 +27,14 @@ module.exports = (config, projectKey) => Object.freeze({
   changes(repositorySlug, params) {
     return include("api/projects/repos/changes")(config, projectKey, repositorySlug, params);
   },
-  create(values) {
-    return request(createOptions.forPost(config, reposPath(projectKey), toRepository(values)));
-  },
   commits(repositorySlug, params) {
     return include("api/projects/repos/commits")(config, projectKey, repositorySlug, params);
   },
   compare(repositorySlug) {
     return include("api/projects/repos/compare")(config, projectKey, repositorySlug);
+  },
+  create(values) {
+    return request(createOptions.forPost(config, reposPath(projectKey), toRepository(values)));
   },
   delete(repositorySlug) {
     return request(createOptions.forDelete(config, reposPath(projectKey, repositorySlug)));

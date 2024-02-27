@@ -14,6 +14,9 @@ const config = defaults({
 }, stashConfig);
 
 // jscs:disable jsDoc
-stash(config).api().admin().mailServer().delete()
+stash(config).api()
+  .admin()
+  .mailServer()
+  .delete()
   .then(response => console.log(response.body))
   .catch(console.error);

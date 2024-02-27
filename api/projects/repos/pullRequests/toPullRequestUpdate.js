@@ -9,11 +9,17 @@ const set = require("lodash/set");
 const filterProperties = include("src/filterProperties");
 const valuesMap = include("api/projects/repos/pullRequests/toPullRequest/valuesMap");
 
-module.exports = values => reduce(
+module.exports = (values = {}) => reduce(
   valuesMap,
   (result, mapper, key) => set(result, key, mapper(result[key])),
   filterProperties(
-    ["description", "id", "reviewers", "title", "version"],
-    values || {}
+    [
+      "description",
+      "id",
+      "reviewers",
+      "title",
+      "version"
+    ],
+    values
   )
 );

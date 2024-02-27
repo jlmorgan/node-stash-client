@@ -5,7 +5,7 @@ const defaults = require("lodash/defaults");
 const include = require("include")(__dirname);
 
 // Project
-const stash = include("index"); // require("stash-client");
+const stash = include("index"); // Require("stash-client");
 
 // Test
 const stashConfig = include("test/config");
@@ -20,6 +20,11 @@ const commentId = "24861";
 // 24857 24858 24859 24860 24861
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).pullRequests(repositorySlug).comments(pullRequestId).get(commentId)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .pullRequests(repositorySlug)
+  .comments(pullRequestId)
+  .get(commentId)
   .then(response => console.log(response.body))
   .catch(console.error);

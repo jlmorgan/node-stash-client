@@ -5,7 +5,7 @@ const defaults = require("lodash/defaults");
 const include = require("include")(__dirname);
 
 // Project
-const stash = include("index"); // require("stash-client");
+const stash = include("index"); // Require("stash-client");
 
 // Test
 const stashConfig = include("test/config");
@@ -24,6 +24,11 @@ const values = {
 
 // jscs:disable jsDoc
 // NOTE(jlmorgan): Not sure why, but I get 404 for these requests.
-stash(config).api().projects().repos(projectKey).pullRequests(repositorySlug).participants(pullRequestId).create(values)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .pullRequests(repositorySlug)
+  .participants(pullRequestId)
+  .create(values)
   .then(response => console.log(response.body))
   .catch(console.error);

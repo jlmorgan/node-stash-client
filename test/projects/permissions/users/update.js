@@ -19,6 +19,10 @@ const params = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().projects().permissions(projectKey).users().update(params)
+stash(config).api()
+  .projects()
+  .permissions(projectKey)
+  .users()
+  .update(params)
   .then(response => console.log(response.statusCode === 204))
   .catch(console.error);

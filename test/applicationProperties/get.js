@@ -14,6 +14,8 @@ const config = defaults({
 }, stashConfig);
 
 // jscs:disable jsDoc
-stash(config).api().applicationProperties().get()
+stash(config).api()
+  .applicationProperties()
+  .get()
   .then(response => console.log(response.body))
   .catch(console.error);

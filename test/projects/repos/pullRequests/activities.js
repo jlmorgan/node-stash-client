@@ -18,6 +18,10 @@ const pullRequestId = "3";
 const params = {};
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).pullRequests(repositorySlug).activities(pullRequestId, params)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .pullRequests(repositorySlug)
+  .activities(pullRequestId, params)
   .then(response => console.log(response.body))
   .catch(console.error);

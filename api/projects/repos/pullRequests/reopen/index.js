@@ -10,6 +10,7 @@ const filterParams = include("src/filterProperties")(["version"]);
 const reopenPath = include("api/projects/repos/pullRequests/reopen/path");
 const request = include("lib/request");
 
+// eslint-disable-next-line max-params
 module.exports = curryN(5, (config, projectKey, repositorySlug, pullRequestId, params) => request(createOptions.forPost(
   config,
   reopenPath(projectKey, repositorySlug, pullRequestId),

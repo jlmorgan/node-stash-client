@@ -10,6 +10,7 @@ const declinePath = include("api/projects/repos/pullRequests/decline/path");
 const filterParams = include("src/filterProperties")(["version"]);
 const request = include("lib/request");
 
+// eslint-disable-next-line max-params
 module.exports = curryN(5, (config, projectKey, repositorySlug, pullRequestId, params) => request(createOptions.forPost(
   config,
   declinePath(projectKey, repositorySlug, pullRequestId),

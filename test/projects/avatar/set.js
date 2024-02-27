@@ -17,6 +17,9 @@ const projectKey = "TEST";
 const filePath = path.join(__dirname, "test.png");
 
 // jscs:disable jsDoc
-stash(config).api().projects().avatar(projectKey).set(filePath)
+stash(config).api()
+  .projects()
+  .avatar(projectKey)
+  .set(filePath)
   .then(response => console.log(response.body))
   .catch(console.error);

@@ -24,6 +24,11 @@ const values = {
 // 24857 24858 24859 24860 24861
 
 // jscs:disable jsDoc
-stash(config).api().projects().repos(projectKey).commits(repositorySlug).comments(commitId).update(commentId, values)
+stash(config).api()
+  .projects()
+  .repos(projectKey)
+  .commits(repositorySlug)
+  .comments(commitId)
+  .update(commentId, values)
   .then(response => console.log(response.body))
   .catch(console.error);

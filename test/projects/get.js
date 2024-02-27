@@ -13,6 +13,8 @@ const config = defaults({}, stashConfig);
 const projectKey = "TEST";
 
 // jscs:disable jsDoc
-stash(config).api().projects().get(projectKey)
+stash(config).api()
+  .projects()
+  .get(projectKey)
   .then(response => console.log(response.body))
   .catch(console.error);

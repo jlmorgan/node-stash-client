@@ -20,7 +20,11 @@ const params = {
 };
 
 // jscs:disable jsDoc
-stash(config).api().projects().avatar(projectKey).get(params)
+stash(config).api()
+  .projects()
+  .avatar(projectKey)
+  .get(params)
+  // eslint-disable-next-line no-sync
   .then(response => fs.writeFileSync(
     path.join(__dirname, `avatar-${projectKey.toLowerCase()}.png`),
     response.body,
